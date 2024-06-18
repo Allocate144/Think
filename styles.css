@@ -7,20 +7,7 @@ body, html {
     align-items: center;
     justify-content: center;
     font-family: Arial, sans-serif;
-    background-color: transparent; /* Set background color to transparent */
-    overflow: hidden; /* Prevent scrolling outside the viewport */
-}
-
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: inherit;
-    z-index: -1;
-    backdrop-filter: blur(10px); /* Adjust the blur intensity as needed */
+    background: #f0f0f0;
 }
 
 .login-container {
@@ -30,27 +17,11 @@ body::before {
 .login-box {
     width: 300px;
     padding: 40px;
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-    border-radius: 20px;
-    transition: transform 0.5s ease; /* Added box-shadow transition */
+    background: #fff;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
     transform-style: preserve-3d;
-    position: relative;
-    overflow: hidden;
-}
-
-.login-box::before {
-    content: '';
-    position: absolute;
-    top: -10px; /* Adjust top position to create space */
-    left: -10px; /* Adjust left position to create space */
-    width: calc(100% + 20px); /* Extend width to cover the expanded area */
-    height: calc(100% + 20px); /* Extend height to cover the expanded area */
-    background-color: inherit; /* Use the same background color */
-    opacity: 0.2;
-    z-index: -1;
-    transition: transform 0.5s ease;
-    border-radius: 20px; /* Match the border radius of the login box */
-    pointer-events: none; /* Allow interactions with elements behind */
 }
 
 .login-box h2 {
@@ -72,10 +43,9 @@ body::before {
     color: #333;
     margin-bottom: 30px;
     border: none;
-    border-bottom: 1px solid #007bff;
+    border-bottom: 1px solid #333;
     outline: none;
     background: transparent;
-    transition: border-color 0.3s ease;
 }
 
 .input-box label {
@@ -84,7 +54,7 @@ body::before {
     left: 0;
     padding: 10px 0;
     font-size: 16px;
-    color: #007bff;
+    color: #333;
     pointer-events: none;
     transition: 0.5s;
 }
@@ -93,50 +63,22 @@ body::before {
 .input-box input:valid ~ label {
     top: -20px;
     left: 0;
-    color: #007bff;
+    color: #333;
     font-size: 12px;
-}
-
-.eye-button {
-    position: absolute;
-    top: 10px;
-    right: 0;
-    cursor: pointer;
-    user-select: none;
-    font-size: 18px;
-    color: #007bff;
-    transition: color 0.3s ease;
-}
-
-.eye-button:hover {
-    color: #0056b3;
-}
-
-.eye-icon {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
 }
 
 button {
     width: 100%;
-    background: #007bff;
+    background: #555;
     border: none;
     padding: 10px;
     cursor: pointer;
     font-size: 16px;
     color: #fff;
-    transition: background 0.3s ease;
+    transition: 0.3s;
+    border-radius: 10px;
 }
 
 button:hover {
-    background: #0056b3;
-}
-
-.login-box:hover::before {
-    transform: scale(1.1);
-}
-
-.login-box:hover {
-    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg); /* Adjusted hover effect */
+    background: #00ff00;
 }
